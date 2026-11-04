@@ -556,7 +556,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             final PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
 
             TextView tvWebpage = dialog.findViewById(R.id.TVWebpage);
-            tvWebpage.setText(Html.fromHtml("<a href=\"https://github.com/GunaCharanTeja/WinlatorMali\">github.com/GunaCharanTeja/WinlatorMali</a>", Html.FROM_HTML_MODE_LEGACY));
+            tvWebpage.setText(Html.fromHtml("<a href=\"https://github.com/adamk324/Malilator\">github.com/adamk324/Malilator</a>", Html.FROM_HTML_MODE_LEGACY));
             tvWebpage.setMovementMethod(LinkMovementMethod.getInstance());
 
             ((TextView) dialog.findViewById(R.id.TVAppVersion)).setText(getString(R.string.version) + " " + pInfo.versionName + " (egl-renderer)");
@@ -575,7 +575,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             String creditsHTML = String.join("<br />",
-                    "<b>Winlator Mali</b> by <a href=\"https://github.com/GunaCharanTeja\">GunaCharanTeja (Fcharan)</a>",
+                    "<b>Malilator</b>, based on <b>Winlator Mali 1.2.1</b> by <a href=\"https://github.com/GunaCharanTeja\">GunaCharanTeja (Fcharan)</a>",
                     "<b>Winlator &amp; Gladio</b> by <a href=\"https://github.com/brunodev85\">Bruno (brunodev85)</a>",
                     "Fork of <b>Winlator Bionic</b> by <a href=\"https://github.com/Pipetto-crypto\">Pipetto Cripto</a>",
                     "<b>BCN Layer &amp; Transcode</b> by <a href=\"https://github.com/leegao\">leegao</a>",

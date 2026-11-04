@@ -29,7 +29,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="?attr/colorAccent"
-                    android:text="Winlator Mali" />
+                    android:text="Malilator" />
 
                 <TextView
                     android:id="@+id/TVWebpage"

@@ -1,112 +1,37 @@
-<p align="center">
-  <img src="logo.png" width="376" height="128" alt="Winlator Mali Logo" />
-</p>
+# Malilator
 
-# Winlator Mali (Bionic Edition)
+Malilator is a Winlator Mali Bionic 1.2.1-derived Android compatibility environment for Windows applications and games. It targets Mali and MediaTek devices while retaining the upstream Adreno and other supported paths.
 
-[![Release](https://img.shields.io/badge/Release-1.2.1%20Bionic-blue.svg)](https://github.com/GunaCharanTeja/WinlatorMali/releases)
-[![Android](https://img.shields.io/badge/Android-8.0%2B-orange.svg)](https://developer.android.com)
-[![Architecture](https://img.shields.io/badge/Arch-ARM64--v8a-purple.svg)](https://en.wikipedia.org/wiki/AArch64)
-[![Support](https://img.shields.io/badge/Support-DXML-ff5e5b.svg)](https://kofi-tracker.teja44951.workers.dev/goal)
+The current source baseline is upstream branch `bionic-mali-1.2` at commit [`0411a4b`](https://github.com/GunaCharanTeja/WinlatorMali/commit/0411a4b602ed00d71bef52e6a7ccb82a8e709b1a). The upstream `bionic-mali-1.2.1` release tag is included. Malilator development is beginning with build reproduction and project identity; new compatibility claims will be marked only after source review and device testing.
 
-**Winlator Mali** runs Windows (x86 / x86_64) games on Android, built for Non Snapdragon Devices with (MediaTek Dimensity, Samsung Exynos, Google Tensor), and still works on Qualcomm Adreno.
+## Current status
 
-It is built on the Android Bionic runtime (from Pipetto Cripto's Winlator Bionic fork) for faster, cooler, battery-friendly gaming.
+- Android application: Java and XML UI, Android package namespace remains `com.winlator.cmod` for source compatibility.
+- Standard application ID: `com.malilator.app`, so it can be installed alongside the upstream standard package.
+- Native stack: C/C++, CMake, native EGL renderer, Vulkan support, ZeroFG, Mali telemetry, Wine/Box64/FEX runtime payloads.
+- CI: GitHub Actions builds debug and unsigned release APKs, runs unit-test and lint tasks, and uploads build logs.
+- Physical device validation: not yet performed. A successful CI build is not evidence of Immortalis-G925 behavior.
+- Licensing review: in progress. Keep any new repository private until bundled component redistribution terms are checked.
 
-> **Status:** Winlator Mali is no longer being updated. **1.2.1 is the final release.** Development has moved to **DXML**, an independent, Mali-specialized Direct3D translation platform. See below.
+## Build and install
 
----
+The recommended debug APK is `Malilator-standard-debug.apk` from the GitHub Actions artifact. It is signed with the standard Android debug key and is intended for testing. The release artifact is unsigned unless a maintainer configures a private release key. See [BUILD_INSTRUCTIONS.md](BUILD_INSTRUCTIONS.md) and [GITHUB_ACTIONS.md](GITHUB_ACTIONS.md).
 
-## ❤️ Support DXML
+The project currently uses JDK 17, Android SDK platform 34, Build Tools 35.0.0, NDK 29.0.14206865, and CMake 3.22.1. The Android Gradle Plugin is 8.8.0 and the Gradle wrapper is 8.10.2.
 
-**DXML** is an independent, Mali-specialized Direct3D translation platform, built from scratch for Mali GPUs instead of relying on DXVK. It is built by one person, for free, and the project fund is how you can help it along.
+## Upstream credits and source
 
-**My promise:** DXML updates will keep coming, whether or not the goal is reached.
+Malilator preserves upstream history and required notices. See [UPSTREAM_BASE.md](UPSTREAM_BASE.md), [CREDITS.md](CREDITS.md), and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The original project is [WinlatorMali](https://github.com/GunaCharanTeja/WinlatorMali) by GunaCharanTeja.
 
-[![Project fund](https://img.shields.io/endpoint?url=https://kofi-tracker.teja44951.workers.dev/donations/goal.json)](https://kofi-tracker.teja44951.workers.dev/goal)
-[![Supporters](https://img.shields.io/endpoint?url=https://kofi-tracker.teja44951.workers.dev/donations/supporters.json)](https://kofi-tracker.teja44951.workers.dev/goal)
+## Roadmap documents
 
-* 📊 **Live fund page**: [kofi-tracker.teja44951.workers.dev/goal](https://kofi-tracker.teja44951.workers.dev/goal)
-* ☕ **Ko-fi**: [ko-fi.com/gunacharanteja](https://ko-fi.com/gunacharanteja)
-* 🇮🇳 **UPI (India)**: `gunacharanteja@slc`
-* 🪙 **Crypto (USDT)**: message me on [Telegram](https://t.me/+RDjo9_ORqXgwODc1) for the address and network. Please don't send anything before you've checked it with me.
+- [Project overview](PROJECT_OVERVIEW.md)
+- [Architecture audit](ARCHITECTURE.md)
+- [Build instructions](BUILD_INSTRUCTIONS.md)
+- [GitHub Actions](GITHUB_ACTIONS.md)
+- [Known issues](KNOWN_ISSUES.md)
+- [Test results](TEST_RESULTS.md)
+- [Changelog](CHANGELOG.md)
+- [Codex handoff](CODEX_HANDOFF.md)
 
-Even a small amount helps. Sharing the project with other Mali users helps too. Thank you!
-
----
-
-## Why Winlator Mali?
-
-Mali GPUs don't natively support the BCn texture formats (BC1–BC7) that PC games rely on, which caused black textures and missing models. Winlator Mali fixes this and more:
-
-* **BCn texture emulation** to ASTC / ETC2, with a persistent disk cache to remove repeat stutter
-* **Native EGL renderer** with FSR, SGSR, FXAA and other PostFX
-* **ZeroFG frame generation**, a Vulkan compute engine tuned for Mali
-* **Real Mali telemetry HUD** (GPU load, clocks, CPU, battery watts, frametimes)
-* **Touch controls, gyro, USB gamepads and rumble**, plus a live in-game controls editor
-* **Community Configs** with ratings, **SteamGridDB** artwork and a **Save Manager**
-
----
-
-## Final Release: 1.2.1 Bionic
-
-Fixes and polish for 1.2. **Reinstall required.** Full notes: [RELEASE_NOTES_1.2.1.md](RELEASE_NOTES_1.2.1.md).
-
-Older versions (1.0, 1.1, 1.2) are listed on the [Releases page](https://github.com/GunaCharanTeja/WinlatorMali/releases).
-
----
-
-## Installation
-
-1. Download the latest APK from [GitHub Releases](https://github.com/GunaCharanTeja/WinlatorMali/releases).
-2. Install it and grant storage permissions.
-3. On first launch, wait while the root filesystem unpacks.
-4. Container setup:
-   * **Mali GPUs**: set Graphics Driver to **Wrapper**, and set BCn Emulation to ASTC or ETC2.
-   * **Adreno GPUs**: choose **Turnip (Adreno)** with DXVK.
-   * **Box64 / FEX preset**: start with *Intermediate* or *Compatibility*.
-5. Launch a container, or import tested shortcuts from the **Community Configs** tab.
-
----
-
-## Building from Source
-
-Requires JDK 17, Android SDK 34 (Build-Tools 35.0.0), NDK 29.0.14206865 and CMake 3.22.1+.
-
-```bash
-git clone https://github.com/GunaCharanTeja/WinlatorMali.git -b bionic-mali-1.2
-cd WinlatorMali
-./gradlew assembleRelease        # Windows: .\gradlew.bat assembleRelease
-```
-
-APKs are written to `app/build/outputs/apk/<flavor>/release/` (flavors: `standard`, `ludashi`, `antutu`).
-
----
-
-## Community
-
-💬 [Telegram Group](https://t.me/+RDjo9_ORqXgwODc1) for help, testing, configs and updates.
-
----
-
-## Credits
-
-* **Winlator Mali**: [GunaCharanTeja (Fcharan)](https://github.com/GunaCharanTeja)
-* **Winlator & Gladio**: [Bruno (brunodev85)](https://github.com/brunodev85)
-* **Bionic fork**: [Pipetto Cripto](https://github.com/Pipetto-crypto)
-* **BCn Vulkan layer**: [leegao](https://github.com/leegao)
-* **HUD & File Manager**: [stevenmxz](https://github.com/StevenMXZ)
-* **Controller fixes**: [vivsi1](https://github.com/Vivsi1)
-* **Theme system & CI**: [Noysz](https://github.com/Noysz)
-* **Community Configs idea**: [The412Banner](https://github.com/The412Banner)
-* **Reference implementations**: [longjunyu2](https://github.com/longjunyu2)
-* **ZeroFG**: [hy300leosquizz-ctrl](https://github.com/hy300leosquizz-ctrl/ZeroFG)
-* **Touch controls styling**: inspired by [Madeira](https://github.com/willfaust/madeira)
-
-## Licenses
-
-Wine/Proton (LGPL v2.1+), Box64 (MIT), FEX-Emu (MIT), Mesa (MIT/LGPL), DXVK (zlib/libpng), VKD3D (LGPL v2.1), libadrenotools (GPL v3), ZeroFG (Apache 2.0 / BSD 3-Clause), Inter Font (SIL OFL 1.1), AOSP (Apache 2.0).
-
----
-
-<p align="center">Building DXML for Mali users. <a href="https://kofi-tracker.teja44951.workers.dev/goal">Support the project fund ☕</a></p>
+GPU compatibility, Immortalis-G925, MediaTek research, and graphics backend documents will be populated as the corresponding source and device investigation is completed. No unsupported driver capability or performance claim is implied by the project name or target hardware.

@@ -93,8 +93,8 @@ android {
         // We’re preserving Winlator’s request to keep targetSdkVersion at 28
         targetSdkVersion 28
 
-        versionCode 23
-        versionName "1.2.1 Bionic"
+        versionCode 24
+        versionName "1.2.1 Malilator"
 
         // External native build from Winlator
         externalNativeBuild {
@@ -126,11 +126,14 @@ android {
             }
 
             def keyFile = props['keystore.file'] ? file(props['keystore.file']) : file("${rootDir}/keystore/release.jks")
-            if (keyFile.exists()) {
+            def storePasswordValue = props['keystore.password']
+            def keyAliasValue = props['key.alias']
+            def keyPasswordValue = props['key.password']
+            if (keyFile.exists() && storePasswordValue && keyAliasValue && keyPasswordValue) {
                 storeFile keyFile
-                storePassword props['keystore.password'] ?: "android"
-                keyAlias props['key.alias'] ?: "winlator_mali"
-                keyPassword props['key.password'] ?: "android"
+                storePassword storePasswordValue
+                keyAlias keyAliasValue
+                keyPassword keyPasswordValue
                 
                 enableV1Signing true
                 enableV2Signing true
@@ -147,11 +150,8 @@ android {
         }
         release {
             minifyEnabled false
-            def releaseKeyFile = project.rootProject.file('keystore/release.jks')
-            if (releaseKeyFile.exists()) {
+            if (signingConfigs.release.storeFile != null) {
                 signingConfig signingConfigs.release
-            } else {
-                signingConfig signingConfigs.debug
             }
         }
     }
@@ -165,18 +165,18 @@ android {
     productFlavors {
         standard {
             dimension "version"
-            applicationId "com.winlator.mali"
-            resValue "string", "app_name", "Winlator Mali"
+            applicationId "com.malilator.app"
+            resValue "string", "app_name", "Malilator"
         }
         ludashi {
             dimension "version"
-            applicationId "com.ludashi.benchmark"
-            resValue "string", "app_name", "Winlator Mali Ludashi"
+            applicationId "com.malilator.ludashi"
+            resValue "string", "app_name", "Malilator Ludashi"
         }
         antutu {
             dimension "version"
-            applicationId "com.antutu.ABenchMark"
-            resValue "string", "app_name", "Winlator Mali AnTuTu"
+            applicationId "com.malilator.antutu"
+            resValue "string", "app_name", "Malilator AnTuTu"
         }
     }
 
