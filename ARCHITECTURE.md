@@ -13,6 +13,7 @@ The inspected source is a native Android application, not a web UI. It uses Java
 - `app/src/main/assets`: runtime archives, graphics wrappers, fonts, configuration data, and other packaged payloads. These assets are large and carry distinct licensing obligations.
 - `android_sysvshm`, `audio_plugin`: native helper components built with CMake/toolchain scripts.
 - `app/src/main/res`: XML layouts, drawables, and theme resources.
+- `GPUCompatibilityFragment`: on-demand diagnostics UI. It queries Vulkan through existing JNI and creates a temporary EGL pbuffer to read EGL/OpenGL ES strings; it does not change container settings.
 
 ## Build configuration
 

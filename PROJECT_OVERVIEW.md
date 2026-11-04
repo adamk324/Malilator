@@ -6,9 +6,9 @@ Develop a maintainable Winlator Mali Bionic derivative for Android, with particu
 
 ## Milestones
 
-1. **Repository takeover and build reproduction** — source baseline identified, upstream history retained, application IDs separated, CI prepared. Remote repository creation and first CI APK remain pending.
-2. **Hardware detection and diagnostics** — not started.
-3. **MediaTek compatibility** — not started; speculative workarounds must be labeled experimental.
+1. **Repository takeover and build reproduction** — source baseline and 1.2.1 release identified, upstream history retained through a real GitHub fork, `main` established as default, package identity separated, and first CI APK build passed.
+2. **Hardware detection and diagnostics** — first on-demand Vulkan/EGL report and GPU-family classification implemented; full feature/limit probes and device validation remain pending.
+3. **MediaTek compatibility** — research baseline recorded; validated workarounds not yet implemented.
 4. **UI redesign** — not started.
 5. **Performance and reliability** — not started.
 6. **Release preparation** — not started.

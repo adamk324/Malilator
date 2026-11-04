@@ -9,7 +9,8 @@ The current source baseline is upstream branch `bionic-mali-1.2` at commit [`041
 - Android application: Java and XML UI, Android package namespace remains `com.winlator.cmod` for source compatibility.
 - Standard application ID: `com.malilator.app`, so it can be installed alongside the upstream standard package.
 - Native stack: C/C++, CMake, native EGL renderer, Vulkan support, ZeroFG, Mali telemetry, Wine/Box64/FEX runtime payloads.
-- CI: GitHub Actions builds debug and unsigned release APKs, runs unit-test and lint tasks, and uploads build logs.
+- CI: [first GitHub Actions build passed](https://github.com/adamk324/Malilator/actions/runs/41910695504); debug and unsigned release APKs plus a Gradle log were uploaded.
+- GPU diagnostics: the new on-demand screen reports the system Vulkan device, extensions, EGL/OpenGL ES strings, and an advisory family profile. Full Vulkan features/limits and physical-device validation remain pending.
 - Physical device validation: not yet performed. A successful CI build is not evidence of Immortalis-G925 behavior.
 - Licensing review: in progress. Keep any new repository private until bundled component redistribution terms are checked.
 
@@ -31,6 +32,11 @@ Malilator preserves upstream history and required notices. See [UPSTREAM_BASE.md
 - [GitHub Actions](GITHUB_ACTIONS.md)
 - [Known issues](KNOWN_ISSUES.md)
 - [Test results](TEST_RESULTS.md)
+- [GPU compatibility database](GPU_COMPATIBILITY_DATABASE.md)
+- [Immortalis-G925 profile](IMMORTALIS_G925_PROFILE.md)
+- [MediaTek compatibility](MEDIATEK_COMPATIBILITY.md)
+- [Graphics backends](GRAPHICS_BACKENDS.md)
+- [UI design](UI_DESIGN.md)
 - [Changelog](CHANGELOG.md)
 - [Codex handoff](CODEX_HANDOFF.md)
 

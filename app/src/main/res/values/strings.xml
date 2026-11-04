@@ -104,6 +104,10 @@
     <string name="credits_and_third_party_apps">Credits and Third-party apps</string>
     <string name="external_controllers">External Controllers</string>
     <string name="graphics_driver">Graphics Driver</string>
+    <string name="gpu_diagnostics">GPU Diagnostics</string>
+    <string name="gpu_diagnostics_intro">Live graphics capabilities reported by Android. Unavailable values are left blank; the recommendation never changes container settings.</string>
+    <string name="gpu_diagnostics_scanning">Reading the system Vulkan device and creating a temporary EGL context…</string>
+    <string name="share_diagnostics">Share diagnostics</string>
     <string name="audio_driver">Audio Driver</string>
     <string name="loading">Loading…</string>
     <string name="press_any_button_on_your_controller">Press any button on your controller</string>

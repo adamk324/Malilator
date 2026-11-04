@@ -227,6 +227,7 @@ dependencies {
     implementation 'com.kohlschutter.junixsocket:junixsocket-native-common:2.6.0'
     implementation 'com.caverock:androidsvg-aar:1.4'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 

@@ -43,6 +43,10 @@
                     android:id="@+id/main_menu_adrenotools_gpu_drivers"
                     android:icon="@drawable/ic_graphics_enhancements"
                     android:title="@string/adrenotools_gpu_drivers" />
+                <item
+                    android:id="@+id/main_menu_gpu_diagnostics"
+                    android:icon="@drawable/ic_graphics_management"
+                    android:title="@string/gpu_diagnostics" />
             </group>
         </menu>
     </item>
